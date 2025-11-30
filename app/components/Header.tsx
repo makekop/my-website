@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 const navigation = [
     { name: "About", href: "#" },
     { name: "Projects", href: "#" },
@@ -10,21 +8,21 @@ const navigation = [
 ];
 
 export default function Header() {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     return (
-        <header className="mx-auto flex items-center justify-center shadow-lg gap-x-4 mb-6 p-4">
-            <nav className="flex items-center gap-x-6">
-                <div className="hidden lg:flex lg:gap-x-12">
-                    {navigation.map((item) => (
+        <header className="flex items-center justify-center shadow-lg p-6 bg-gray-100">
+            <nav>
+                {navigation.map((item) => {
+                    debugger;
+                    return (
                         <a
                             key={item.name}
                             href={item.href}
-                            className="font-semibold text-gray-900"
+                            className="font-bold text-2xl p-6"
                         >
                             {item.name}
                         </a>
-                    ))}
-                </div>
+                    );
+                })}
             </nav>
         </header>
     );
